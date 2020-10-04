@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_channel"
+        android:title="Channel Doctor" ></item>
+    <item android:id="@+id/menu_RegisterVet"
+        android:title="Register Veterinarian" ></item>
+    <item android:id="@+id/menu_careCenter"
+        android:title="Care Center" ></item>
+    <item android:id="@+id/menu_viewVet"
+        android:title="View Veterinarian" ></item>
+    <item android:id="@+id/menu_viewPets"
+        android:title="View Pets" ></item>
+    <item android:id="@+id/menu_viewChanneledDoc"
+        android:title="Channeled Doctors" ></item>
+    <item android:id="@+id/menu_myPets"
+        android:title="My Pets" ></item>
+    <item android:id="@+id/menu_myCareCenter"
+        android:title="MyCareCenter" ></item>
+    <item android:id="@+id/menu_editProfile"
+        android:title="Edit Profile" ></item>
+    <item android:id="@+id/menu_logout"
+        android:title="Logout" ></item>
+
+</menu>
