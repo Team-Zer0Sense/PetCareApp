@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UpdateCareCenter extends AppCompatActivity {
-    Button Updatecenter,cancelBtn;
+    Button Updatecenter,deleteBtn;
     boolean valid = true;
     EditText CenterName,FirstName,LastName,Mobile,Email,Address;
     FirebaseAuth fAuth;
@@ -37,6 +37,7 @@ public class UpdateCareCenter extends AppCompatActivity {
         Mobile      = findViewById(R.id.editcarecentermobile);
         Email       = findViewById(R.id.editcarecentermail);
         Address     = findViewById(R.id.editcarecenteraddress);
+        deleteBtn   = findViewById(R.id.button3);
         fAuth       = FirebaseAuth.getInstance();
         fStore      = FirebaseFirestore.getInstance();
 
@@ -84,6 +85,21 @@ public class UpdateCareCenter extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), ViewCareCenter.class));
                 }
 
+
+            }
+        });
+        deleteBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fStore.collection("CareCenter").document(petm.getId())
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(UpdateCareCenter.this,"Care Center Deleted",Toast.LENGTH_LONG).show();
+                                startActivity(new Intent(getApplicationContext(), MyCareCenter.class));
+                            }
+                        });
 
             }
         });
